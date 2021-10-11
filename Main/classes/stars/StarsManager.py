@@ -21,7 +21,7 @@ class StarsManager:
 
     def __random_generate(self):
         self.stars = []
-        for i in range(20):
+        for i in range(self.num):
             self.add_random_star()
 
     def calculate_brightness(self):

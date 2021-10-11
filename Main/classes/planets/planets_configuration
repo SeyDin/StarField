@@ -1,0 +1,15 @@
+mercury 150 10 0 0.005 orange center
+mercury2 75 5 0 0.01 blue mercury
+mercury3 40 4 0 0.1 red mercury2
+mercury4 25 3 0 0.12 yellow mercury3
+mercury5 150 3 0 0.12 yellow mercury4
+
+ven 250 12 120 0.0025 orange center
+ven2 75 5 0 0.01 blue ven
+ven3 40 4 0 0.1 red ven2
+ven4 25 3 0 0.12 yellow ven3
+
+earth 350 12 240 0.00125 orange center
+earth2 75 5 0 0.01 blue earth
+earth3 40 4 0 0.1 red earth2
+earth4 25 3 0 0.12 yellow earth3

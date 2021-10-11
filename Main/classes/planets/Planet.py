@@ -2,13 +2,14 @@ import math
 
 
 class Planet:
-    def __init__(self, radius_orb, radius, fi, velocity, colour, centr = None):
+    def __init__(self, name, radius_orb, radius, fi, velocity, colour, center=None):
+        self.name = name
         self.radius_orb = radius_orb
         self.radius = radius
         self.fi = fi * 2 * 3.14 / 360
         self.velocity = velocity
         self.colour = colour
-        self.center = centr
+        self.center = center
         self.time = 0
         self.x = self.y = 0
 

@@ -16,7 +16,7 @@ BLUE2 = (50, 220, 255)
 YELLOW = (220, 200, 100)
 
 """data = {
-        'mercuryury':{'radius':int(0.382*30), 'velocity':int(47.89), 'number':1, 'colour':YELLOW},
+        'mercury':{'radius':int(0.382*30), 'velocity':int(47.89), 'number':1, 'colour':YELLOW},
           'venus':{'radius':int(0.949*30), 'velocity':int(35.03), 'number':2, 'colour':ORANGE},
           'earth':{'radius':int(1.000*30), 'velocity':int(29.79), 'number':3, 'colour':BLUE},
            'mars':{'radius':int(0.532*30), 'velocity':int(24.13), 'number':4, 'colour':RED},
