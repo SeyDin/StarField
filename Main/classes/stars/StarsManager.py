@@ -1,4 +1,4 @@
-from Main.classes.Star import Star
+from Main.classes.stars.Star import Star
 import random
 
 

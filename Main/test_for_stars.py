@@ -1,9 +1,5 @@
-import random
-
 import pygame
-
-from Main.classes.Star import Star
-from Main.classes.StarsManager import StarsManager
+from Main.classes.stars.StarsManager import StarsManager
 
 FPS = 60
 WIN_WIDTH = 1000
