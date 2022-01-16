@@ -33,9 +33,6 @@ class PlanetsConfigurationResolver:
             if isinstance(planet.center, str):
                 planet.center = self.center
 
-        # self.planets = [mercury, mercury2, mercury3, mercury4, mercury5, ven, ven2, ven3, ven4, earth, earth2, earth3,
-        # earth4]
-
 
 if __name__ == "__main__":
     x = PlanetsConfigurationResolver((12, 12))

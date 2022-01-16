@@ -1,6 +1,5 @@
 import pygame
 
-from Main.classes.planets.Planet import Planet
 from Main.classes.planets.PlanetsConfigurationResolver import PlanetsConfigurationResolver
 from Main.classes.stars.StarsManager import StarsManager
 
