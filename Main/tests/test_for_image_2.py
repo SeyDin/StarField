@@ -23,11 +23,11 @@ clock = pygame.time.Clock()
 screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
 car_image = ImageWrapper(getPicturePath("cars/car_1_86_37.png"))
-wheel_1_image = ImageWrapper("wheel_1_15_15.png")
-wheel_2_image = ImageWrapper("wheel_1_15_15.png")
+wheel_1_image = ImageWrapper(getPicturePath("misc/wheel_1_15_15.png"))
+wheel_2_image = ImageWrapper(getPicturePath("misc/wheel_1_15_15.png"))
 
 car_image_working = TremorWrapper(2, 0.5, car_image)
-way_image_belt = ImageBeltFactory.getImageBelt("highway_2_32_510.png", 5, 0, center_y+9, -3, 0)
+way_image_belt = ImageBeltFactory.getImageBelt(getPicturePath("roads/highway_2_32_510.png"), 5, 0, center_y+9, -3, 0)
 
 car_image.set_position((10, center_y))
 wheel_1_image.set_position(18, center_y+22)

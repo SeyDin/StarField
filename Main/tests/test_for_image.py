@@ -4,6 +4,7 @@ from pygame import Surface, Rect
 from classes.Images.ImageBelt import ImageBelt
 from classes.Images.ImageWrapper import ImageWrapper
 from classes.Images.TremorWrapper import TremorWrapper
+from classes.resourceHelpers import getPicturePath
 
 FPS = 60
 WIN_WIDTH = 1900
@@ -21,12 +22,12 @@ pygame.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
-car_image = ImageWrapper("car_1_86_37.png")
-wheel_1_image = ImageWrapper("wheel_1_15_15.png")
-wheel_2_image = ImageWrapper("wheel_1_15_15.png")
-way_image_1 = ImageWrapper("highway_2_32_510.png", 1)
-way_image_2 = ImageWrapper("highway_2_32_510.png", 2)
-way_image_3 = ImageWrapper("highway_2_32_510.png", 3)
+car_image = ImageWrapper(getPicturePath("cars/car_1_86_37.png"))
+wheel_1_image = ImageWrapper(getPicturePath("misc/wheel_1_15_15.png"))
+wheel_2_image = ImageWrapper(getPicturePath("misc/wheel_1_15_15.png"))
+way_image_1 = ImageWrapper(getPicturePath("roads/highway_2_32_510.png"), 1)
+way_image_2 = ImageWrapper(getPicturePath("roads/highway_2_32_510.png"), 2)
+way_image_3 = ImageWrapper(getPicturePath("roads/highway_2_32_510.png"), 3)
 
 car_image_working = TremorWrapper(2, 0.5, car_image)
 way_image_belt = ImageBelt([way_image_1, way_image_2, way_image_3], -3, 0)
