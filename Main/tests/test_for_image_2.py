@@ -22,7 +22,7 @@ pygame.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
-car_image = ImageWrapper("car_1_86_37.png")
+car_image = ImageWrapper(getPicturePath("cars/car_1_86_37.png"))
 wheel_1_image = ImageWrapper("wheel_1_15_15.png")
 wheel_2_image = ImageWrapper("wheel_1_15_15.png")
 
