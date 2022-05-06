@@ -12,6 +12,7 @@ WIN_HEIGHT = 1000
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 ORANGE = (255, 150, 100)
+KRAYOLA = (120, 219, 226)
 
 center_x = WIN_WIDTH // 2
 center_y = WIN_HEIGHT // 2
@@ -39,7 +40,7 @@ wheel_2_image.set_position(72, center_y+22)
 
 
 while True:
-    screen.fill(ORANGE)
+    screen.fill(KRAYOLA)
     way_image_1.blit(screen)
     way_image_2.blit(screen)
     way_image_3.blit(screen)

@@ -1,10 +1,10 @@
 import pygame
-from pygame import Surface, Rect
 
-from classes.Images.ImageBelt import ImageBelt
 from classes.Images.ImageBeltFactory import ImageBeltFactory
 from classes.Images.ImageWrapper import ImageWrapper
 from classes.Images.TremorWrapper import TremorWrapper
+
+from classes.resourceHelpers import getPicturePath
 
 FPS = 60
 WIN_WIDTH = 1900
@@ -13,6 +13,7 @@ WIN_HEIGHT = 1000
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 ORANGE = (255, 150, 100)
+KRAYOLA = (120, 219, 226)
 
 center_x = WIN_WIDTH // 2
 center_y = WIN_HEIGHT // 2
@@ -32,13 +33,18 @@ car_image.set_position((10, center_y))
 wheel_1_image.set_position(18, center_y+22)
 wheel_2_image.set_position(72, center_y+22)
 
+tree_1_image = ImageWrapper(getPicturePath("trees/green_trees_set_0.png"))
+tree_1_image.set_y(50)
+tree_1_image.set_x(50)
+
 
 while True:
-    screen.fill(ORANGE)
+    screen.fill(KRAYOLA)
     way_image_belt.blit(screen)
     car_image.blit(screen)
     wheel_1_image.blit(screen)
     wheel_2_image.blit(screen)
+    tree_1_image.blit(screen)
 
     car_image_working.calculate_tremor_offset()
     way_image_belt.calculate_images_positions()
