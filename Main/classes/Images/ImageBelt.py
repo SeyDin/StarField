@@ -31,8 +31,10 @@ class ImageBelt:
     def calculate_images_positions(self):
         self.replace_image_if_need()
         for image_w in self.image_w_list:
+
             if self.horizontal:
                 image_w.set_x(image_w.get_x() + self.velocity)
+                print(image_w.image_wrapper_id, image_w.get_x(), image_w.get_y())
             else:
                 image_w.set_y(image_w.get_y() + self.velocity)
 

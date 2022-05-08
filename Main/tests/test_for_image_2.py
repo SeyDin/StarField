@@ -27,27 +27,27 @@ wheel_1_image = ImageWrapper(getPicturePath("misc/wheel_1_15_15.png"))
 wheel_2_image = ImageWrapper(getPicturePath("misc/wheel_1_15_15.png"))
 
 car_image_working = TremorWrapper(2, 0.5, car_image)
-way_image_belt = ImageBeltFactory.getImageBelt(getPicturePath("roads/highway_2_32_510.png"), 5, 0, center_y+9, -3, 0)
+#way_image_belt = ImageBeltFactory.getImageBelt(getPicturePath("roads/highway_2_32_510.png"), img_num=5, x=0, y=center_y+9, velocity=-3, edge=0)
 
 car_image.set_position((10, center_y))
 wheel_1_image.set_position(18, center_y+22)
 wheel_2_image.set_position(72, center_y+22)
 
-tree_1_image = ImageWrapper(getPicturePath("trees/green_trees_set_0.png"))
-tree_1_image.set_y(50)
-tree_1_image.set_x(50)
+trees_paths_list = [getPicturePath(f"trees/green_trees_set_{str(x)}.png") for x in range(6)]
+trees_image_belt = ImageBeltFactory.getManyImagesBelt(img_paths=trees_paths_list, x=100, y=300, velocity=-3, edge=0, bottom_left=True)
 
 
 while True:
     screen.fill(KRAYOLA)
-    way_image_belt.blit(screen)
+    #way_image_belt.blit(screen)
     car_image.blit(screen)
     wheel_1_image.blit(screen)
     wheel_2_image.blit(screen)
-    tree_1_image.blit(screen)
+    trees_image_belt.blit(screen)
 
     car_image_working.calculate_tremor_offset()
-    way_image_belt.calculate_images_positions()
+    #.calculate_images_positions()
+    trees_image_belt.calculate_images_positions()
 
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
