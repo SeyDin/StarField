@@ -1,3 +1,5 @@
+import random
+
 import pygame
 from pygame import Rect
 
@@ -5,11 +7,13 @@ from classes.Images.ImageWrapper import ImageWrapper
 
 
 class ImageBelt:
-    def __init__(self, image_w_list: list, velocity: int, edge: int, horizontal: bool = True):
+    def __init__(self, image_w_list: list, velocity: int, edge: int, shift=0, shift_random=False, horizontal: bool = True):
         self.image_w_list = image_w_list
         self.velocity = velocity
         self.edge = edge
         self.horizontal = horizontal
+        self.shift = shift
+        self.shift_random = shift_random
 
     def replace_image_if_need(self):
         firs_rect: Rect = self.image_w_list[0].image_rect
@@ -23,18 +27,22 @@ class ImageBelt:
         if first_edge <= self.edge:
             self.image_w_list.append(self.image_w_list[0])
             self.image_w_list.pop(0)
+            r_shift = self.shift
+            if self.shift_random:
+                r_shift = random.randint(self.shift - self.shift//2, self.shift + self.shift//2)
+                print(self.shift - self.shift//2, self.shift + self.shift//2)
+                print(r_shift)
             if self.horizontal:
-                self.image_w_list[-1].set_x(last_edge)
+                self.image_w_list[-1].set_x(last_edge - r_shift)
             else:
-                self.image_w_list[-1].set_y(last_edge)
+                self.image_w_list[-1].set_y(last_edge - r_shift)
     
     def calculate_images_positions(self):
         self.replace_image_if_need()
         for image_w in self.image_w_list:
-
             if self.horizontal:
                 image_w.set_x(image_w.get_x() + self.velocity)
-                print(image_w.image_wrapper_id, image_w.get_x(), image_w.get_y())
+                # print(image_w.image_wrapper_id, image_w.get_x(), image_w.get_y())
             else:
                 image_w.set_y(image_w.get_y() + self.velocity)
 
