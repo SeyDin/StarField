@@ -15,6 +15,9 @@ class ImageWrapper:
     def blit(self, screen: pygame.Surface):
         screen.blit(self.image_surf, self.image_rect)
 
+    def flip(self, flip_x=0, flip_y=0):
+        self.image_surf = pygame.transform.flip(self.image_surf, flip_x, flip_y)
+
     def set_position(self, x, y=None, bottom_left=None):
         if not y:
             y = x[1]

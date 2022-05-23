@@ -1,3 +1,5 @@
+import random
+
 import pygame
 
 from classes.Images.ImageBeltFactory import ImageBeltFactory
@@ -33,9 +35,11 @@ car_image.set_position((10, center_y))
 wheel_1_image.set_position(18, center_y+22)
 wheel_2_image.set_position(72, center_y+22)
 
-trees_paths_list = [getPicturePath(f"trees/green_trees_set_{x%6}.png") for x in range(36)]
-trees_image_belt = ImageBeltFactory.getManyImagesBelt(img_paths=trees_paths_list, x=100, y=300, velocity=-3, edge=0, shift=100, shift_random=True, bottom_left=True)
-
+trees_paths_list_1 = [getPicturePath(f"trees/green_trees_set_{(x+3)%6}.png") for x in range(36)]
+trees_paths_list_2 = list(trees_paths_list_1)
+random.shuffle(trees_paths_list_2)
+trees_image_belt_1 = ImageBeltFactory.getManyImagesBelt(img_paths=trees_paths_list_1, x=100, y=300, velocity=-3, edge=0, shift=100, shift_random=True, flip_random=True, bottom_left=True)
+trees_image_belt_2 = ImageBeltFactory.getManyImagesBelt(img_paths=trees_paths_list_2, x=100, y=350, velocity=-3, edge=0, shift=100, shift_random=True, flip_random=True, bottom_left=True)
 
 while True:
     screen.fill(KRAYOLA)
@@ -43,11 +47,13 @@ while True:
     car_image.blit(screen)
     wheel_1_image.blit(screen)
     wheel_2_image.blit(screen)
-    trees_image_belt.blit(screen)
+    trees_image_belt_1.blit(screen)
+    trees_image_belt_2.blit(screen)
 
     car_image_working.calculate_tremor_offset()
     way_image_belt.calculate_images_positions()
-    trees_image_belt.calculate_images_positions()
+    trees_image_belt_1.calculate_images_positions()
+    trees_image_belt_2.calculate_images_positions()
 
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
